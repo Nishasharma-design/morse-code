@@ -1,8 +1,8 @@
-const input = document.querySelector('#myInput');
-const output = document.querySelector('#myOutput');
+//const input = document.querySelector('#myInput');
+//const output = document.querySelector('#myOutput');
 
-//const input = document.getElementById("myInput");
-//const output = document.getElementById("myOutput");
+const input = document.getElementById("myInput");
+const output = document.getElementById("myOutput");
 
 //writing a function to convert english to morse
 

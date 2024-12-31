@@ -1,10 +1,10 @@
-import { engToMorse, morseToEng } from "./Modules/script.js";
+import { engToMorse, morseToEng } from "./script.js";
 
-const input = document.querySelector('#myInput');
-const output = document.querySelector('#myOutput');
+//const input = document.querySelector('#myInput');
+//const output = document.querySelector('#myOutput');
 
-//const input = document.getElementById("myInput");
-//const output = document.getElementById("myOutput");
+const input = document.getElementById("myInput");
+const output = document.getElementById("myOutput");
 
 
 export const translator = (input) => {
