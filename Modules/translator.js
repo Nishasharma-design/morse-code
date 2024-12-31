@@ -1,60 +1,48 @@
+import { engToMorse, morseToEng } from "./Modules/script.js";
+
+const input = document.querySelector('#myInput');
+const output = document.querySelector('#myOutput');
+
+//const input = document.getElementById("myInput");
+//const output = document.getElementById("myOutput");
 
 
-const inputTextarea = document.querySelector('#myInput');
-const outputTextarea = document.querySelector('#myOutput');
-
-const morse_code_dict = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
-    'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
-    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
-  'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
-  'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
-  'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-  'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---',
-  '3': '...--', '4': '....-', '5': '.....', '6': '-....',
-  '7': '--...', '8': '---..', '9': '----.', '0': '-----',
-  ' ': '/'};
-
-const engToMorse = (input) => {
-    if (typeof input !== "string" || !/^[a-z\s]+$/i.test(input)) {
-        return "Invalid input";
+export const translator = (input) => {
+    
+    if (/^[a-z\s]+$/i.test(input)) {
+      output.value = engToMorse(input);
+    } else {
+      output.value = morseToEng(input);  
     }
-   return input.toUpperCase().split('').map(char => morse_code_dict[char] || '').join(' ');
-
 };
 
-const reverseMorse = {
-    '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T', '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y', '--..': 'Z',
-    '.----': '1', '..---': '2', '...--': '3', '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9', '-----': '0',
-  };
+input.addEventListener('input', () => {
+    translator(input.value); 
+});  
 
 
-const morseToEng = (morseCode) => {
-    if (!/^[.\-\/\s]*$/.test(morseCode)) {
-        return "Invalid input";
-    } else {
-    return morseCode.split(" / ").map((word) => word.split(" ").map((letter) => reverseMorse[letter] || "").join("")).join(" ");
-};
-};
 
-export const translator = (inputTextarea) => {
-    const input = inputTextarea.value;
+
+/*const translator = (input) => {
     const englishRegex = /^[a-z\s]+$/i;
-    let output;
+    let result;
     if (englishRegex.test(input)) {
-        output = engToMorse(input);
+        result = engToMorse(input);
     } else {
-        output = morseToEng(input);
+        result = morseToEng(input);
     } 
-return output;
+return result;
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+input.addEventListener('input', translator); 
+
+/*document.addEventListener('DOMContentLoaded', () => {
     const inputTextarea = document.querySelector('#myInput');
-    const outputTextarea = document.querySelector('#myOutput');
+    const outputTextarea = document.querySelector('#myOutput'); 
+    input.addEventListener('input', translator);
+});
   
-    inputTextarea.addEventListener('input', () => {
-      const result = translator(inputTextarea);  
-      outputTextarea.value = result;
-    });
-  });
+      /*outputTextarea.value = result;*/
+
+    
+  

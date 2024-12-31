@@ -1,6 +1,6 @@
 
-import * as script from "./Modules/script";
-import * as morseTranslator from "./Modules/translator";
+import * as script from "./Modules/script.js";
+import * as morseTranslator from "./Modules/translator.js";
 
 const {
     engToMorse,
@@ -72,7 +72,7 @@ describe("translator", () => {
     });
     it('should translate morse code to english', () => {
         const input = ".- .--. .--. .-.. .";
-        const output = "apple";
+        const output = "APPLE";
         expect(translator(input)).toBe(output); 
     }); 
     it('Should return "Invalid input" for unknown characters', () => {

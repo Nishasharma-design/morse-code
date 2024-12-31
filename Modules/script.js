@@ -1,5 +1,8 @@
-const inputTextarea = document.querySelector('#myInput');
-const outputTextarea = document.querySelector('#myOutput');
+const input = document.querySelector('#myInput');
+const output = document.querySelector('#myOutput');
+
+//const input = document.getElementById("myInput");
+//const output = document.getElementById("myOutput");
 
 //writing a function to convert english to morse
 
@@ -35,9 +38,22 @@ export const morseToEng = (morseCode) => {
         return "Invalid input";
     } else {
     return morseCode.split(" / ").map((word) => word.split(" ").map((letter) => reverseMorse[letter] || "").join("")).join(" ");
-};
+}
 };
 
+
+/*const translator = (input) => {
+    
+    if (/^[a-z\s]+$/i.test(input)) {
+      output.value = engToMorse(input);
+    } else {
+      output.value = morseToEng(input);  
+    }
+};
+
+input.addEventListener('input', () => {
+    translator(input.value); 
+});
 
 /*inputTextarea.addEventListener('input', () => {
     let input = inputTextarea.value;
@@ -62,21 +78,4 @@ export const morseToEng = (morseCode) => {
         output = morseToEng(input);
     } 
 return output;
-};
-document.addEventListener('DOMContentLoaded', () => {
-    const inputTextarea = document.querySelector('#myInput');
-    const outputTextarea = document.querySelector('#myOutput');
-
-inputTextarea.addEventListener('input', () => {
-    const result = translator(inputTextarea);
-    outputTextarea.value = result;
-});*/ 
-
-
-
-
-
-
-
-
-
+};*/
