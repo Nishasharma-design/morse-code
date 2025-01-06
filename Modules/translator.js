@@ -1,24 +1,27 @@
 import { engToMorse, morseToEng } from "./script.js";
 
-//const input = document.querySelector('#myInput');
-//const output = document.querySelector('#myOutput');
 
 const input = document.getElementById("myInput");
 const output = document.getElementById("myOutput");
 
 
+
 export const translator = (input) => {
-    
+    let result;
     if (/^[a-z\s]+$/i.test(input)) {
-      output.value = engToMorse(input);
+      result = engToMorse(input);
     } else {
-      output.value = morseToEng(input);  
+      result = morseToEng(input);  
     }
+    return result;
 };
 
-input.addEventListener('input', () => {
-    translator(input.value); 
-});  
+    if (input) {
+        input.addEventListener('input', () => {
+            translator(input.value);
+        });
+    }
+ 
 
 
 

@@ -1,5 +1,4 @@
-//const input = document.querySelector('#myInput');
-//const output = document.querySelector('#myOutput');
+
 
 const input = document.getElementById("myInput");
 const output = document.getElementById("myOutput");
@@ -40,42 +39,3 @@ export const morseToEng = (morseCode) => {
     return morseCode.split(" / ").map((word) => word.split(" ").map((letter) => reverseMorse[letter] || "").join("")).join(" ");
 }
 };
-
-
-/*const translator = (input) => {
-    
-    if (/^[a-z\s]+$/i.test(input)) {
-      output.value = engToMorse(input);
-    } else {
-      output.value = morseToEng(input);  
-    }
-};
-
-input.addEventListener('input', () => {
-    translator(input.value); 
-});
-
-/*inputTextarea.addEventListener('input', () => {
-    let input = inputTextarea.value;
-    const englishRegex = /^[a-z\s]+$/i;
-    let output;
-    if (englishRegex.test(input)) {
-        output = engToMorse(input);
-    } else {
-        output = morseToEng(input);
-    }
-    outputTextarea.value = output;
-}) */
-
-
-/*export const translator = (inputTextarea) => {
-    const input = inputTextarea.value;
-    const englishRegex = /^[a-z\s]+$/i;
-    let output;
-    if (englishRegex.test(input)) {
-        output = engToMorse(input);
-    } else {
-        output = morseToEng(input);
-    } 
-return output;
-};*/

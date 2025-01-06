@@ -1,15 +1,6 @@
 
-import * as script from "./Modules/script.js";
-import * as morseTranslator from "./Modules/translator.js";
-
-const {
-    engToMorse,
-    morseToEng
-} = script;
-
-const {
-    translator
-} = morseTranslator;
+import { engToMorse, morseToEng } from "./Modules/script.js";
+import { translator } from "./Modules/translator.js";
 
 describe('engToMorse', () => {
     it('Should convert an english string to morse code', () => {
